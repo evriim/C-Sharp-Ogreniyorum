@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sayi-Sihirbazi
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int max = 1001, min = 1, guess =500;
+            string UI;
+            string eksi = "-";
+            string artı = "+";
+            string dogru = "*";
+            Console.WriteLine("Sayı Sihirbazına Hoşgeldin!");
+            Console.WriteLine("Aklından bir sayı tut.Bu sayı 1-1000 arasında olsun.");
+            Console.WriteLine("Aklındaki sayı tahminimden yüksek ise + düşük ise -'ye bas.");
+            Console.WriteLine("Sayıyı bildiysem '*' yazman yeterli.");
+            Console.WriteLine("Aklındaki sayı:" + guess);
+            UI =  Console.ReadLine();
+            
+            while (UI != dogru )
+            {
+                if (UI == eksi)
+                {
+                    max = guess;
+                    guess = (max + min) / 2;
+                    Console.WriteLine("Hmm peki sayın bu mu? " + guess);
+
+                }
+                else if (UI == artı)
+                {
+                    min = guess;
+                    guess = (max + min) / 2;
+                    Console.WriteLine("Hmm peki sayın bu mu? " + guess);
+                }
+                UI=Console.ReadLine();
+
+            }
+            Console.WriteLine("Hahaha bildim!");
+            Console.ReadLine();
+        }
+    }
+}
